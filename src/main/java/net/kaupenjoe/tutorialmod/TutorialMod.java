@@ -1,6 +1,7 @@
 package net.kaupenjoe.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.kaupenjoe.tutorialmod.item.ModItems;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -19,7 +20,7 @@ public class TutorialMod
     public TutorialMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        ModItems.register(modEventBus);
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
 
